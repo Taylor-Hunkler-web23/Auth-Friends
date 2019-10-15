@@ -1,4 +1,5 @@
 import React from 'react';
+import {axiosWithAuth} from '../utils/axiosWithAuth.js'
 
 class Login extends React.Component {
     state={
@@ -21,6 +22,10 @@ this.setState({
     login = event => {
         event.preventDefault();
 
+        axiosWithAuth()
+        .post('/api/login', this.state.credentials)
+        .then(response => console.log(response))
+
         
     }
 
@@ -29,7 +34,7 @@ this.setState({
         return(
             <div>
 
-                <form>
+                <form onSubmit={this.login}>
             <input
             type="text"
             name="username"
