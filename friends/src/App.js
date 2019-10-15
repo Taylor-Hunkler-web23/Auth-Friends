@@ -14,11 +14,9 @@ function App() {
         <h1>Friends</h1>
         <Link to="/login">Login</Link>
         <Link to="/protected">Protected Page</Link>
-        <PrivateRoute path= "/protected" component={Form}/>
-        <PrivateRoute path= "/protected" component={FriendList}/>
-        
-     
-
+        <Link to="/form">Add a friend</Link>
+        <PrivateRoute exact path="/form" component={Form} />
+        <PrivateRoute exact path="/protected" component={FriendList} />
         <Route path="/login" component={Login} />
       </div>
     </Router>

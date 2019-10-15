@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 const Form = props => {
+    console.log(props,'p')
     const [friend, setFriend] = useState ({name: '', age:'', email:'' })
 
 
@@ -9,6 +11,18 @@ const Form = props => {
             ...friend,
             [event.target.name]: event.target.value
         })
+    }
+
+    const handleSubmit =event => {
+        event.preventDefault()
+
+        axiosWithAuth()
+        .post('/api/friends', friend)
+        .then(response => {
+            props.history.push('/protected')
+        })
+
+
     }
 
 
@@ -37,7 +51,7 @@ const Form = props => {
         onChange={handleChange}
         />
 
-        <button>Add</button>
+        <button onClick={handleSubmit}> Add</button>
       </form>
       
       </div>
