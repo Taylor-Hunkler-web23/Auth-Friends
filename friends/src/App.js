@@ -11,10 +11,12 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <h1>Friends</h1>
-        <Link to="/login">Login</Link>
-        <Link to="/protected">Protected Page</Link>
-        <Link to="/form">Add a friend</Link>
+
+        <div className="nav">
+          <Link to="/login">Login</Link>
+          <Link to="/protected">Protected Page</Link>
+          <Link to="/form">Add a friend</Link>
+        </div>
         <PrivateRoute exact path="/form" component={Form} />
         <PrivateRoute exact path="/protected" component={FriendList} />
         <Route path="/login" component={Login} />

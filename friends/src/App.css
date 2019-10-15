@@ -20,3 +20,27 @@
 .App-link {
   color: #09d3ac;
 }
+ 
+.nav{
+  font-size: 1.5rem;
+  display: flex;
+
+  justify-content: space-around;
+
+  
+}
+
+.friend-card{
+  border: 3px solid black;
+  width: 35rem;
+  justify-content: center;
+  margin: 2px;
+  background:lightslategrey
+  
+}
+
+.list{
+  display: flex;
+  flex-direction: column;
+ align-items: center;
+}
