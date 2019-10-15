@@ -24,7 +24,10 @@ this.setState({
 
         axiosWithAuth()
         .post('/api/login', this.state.credentials)
-        .then(response => console.log(response))
+        .then(response => {
+            localStorage.setItem('token', response.data.payload);
+        })
+        .catch(err => console.log (err.response));
 
         
     }
