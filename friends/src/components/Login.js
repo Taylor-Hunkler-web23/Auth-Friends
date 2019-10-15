@@ -26,6 +26,7 @@ this.setState({
         .post('/api/login', this.state.credentials)
         .then(response => {
             localStorage.setItem('token', response.data.payload);
+            this.props.history.push('/protected')
         })
         .catch(err => console.log (err.response));
 
