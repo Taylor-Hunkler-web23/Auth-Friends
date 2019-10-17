@@ -22,8 +22,10 @@ const Form = props => {
                 props.history.push('/protected')
             })
 
-
+            .catch((error)=> console.log(error))
     }
+
+
 
 
     return (
